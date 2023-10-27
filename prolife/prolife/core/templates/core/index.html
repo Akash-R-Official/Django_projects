@@ -1,0 +1,534 @@
+{% extends 'core/base.html' %}
+{% load static %}
+
+{% block content %}
+<!-- ----------------------------------------------------------------NavBar ---------------------------------------------------------------------------------------->
+
+<section class="scroll-smooth">
+    <section class="bg-[#151515] font-sans w-full fixed z-50">
+        <nav class="flex justify-around items-center">
+            <a href="/" class="block w-max h-auto"><img src="{% static 'Logo.png' %}" ></a>
+            <div><a href="#" class="m-auto font-semibold text-white hidden md:block">ABOUT</a></div>
+            <div><a href="#" class="m-auto font-semibold text-white hidden md:block">PROGRAMS</a></div>
+            <div><a href="#" class="m-auto font-semibold text-white hidden md:block">REVIEWS</a></div>
+            <div><a href="#" class="m-auto font-semibold text-white hidden md:block">CONTACT</a></div>
+            <div class="relative inline-block text-left block md:hidden">
+                <button onclick="myFunction()"
+                    class="bg-[#161616] text-white py-4 px-6 text-base border-none rounded-lg cursor-pointer focus:outline-none"><svg
+                        xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5"
+                        stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round"
+                            d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
+                    </svg>
+                </button>
+                <div id="myDropdown"
+                    class="dropdown-content hidden origin-top-right absolute right-0 mt-2 w-32 rounded-lg shadow-lg bg-[#DFFE56]">
+                    <a href="#about" class="block px-4 py-2 text-black text-sm text-center hover:bg-[#cffe01]">About</a>
+                    <a href="#programs"
+                        class="block px-4 py-2 text-black text-sm text-center hover:bg-[#cffe01]">Programs</a>
+                    <a href="#reviews"
+                        class="block px-4 py-2 text-black text-sm text-center hover:bg-[#cffe01]">Reviews</a>
+                    <a href="#contact"
+                        class="block px-4 py-2 text-black text-sm text-center hover:bg-[#cffe01]">Contact</a>
+                </div>
+            </div>
+            <script>
+                /* When the user clicks on the button, toggle between hiding and showing the dropdown content */
+                function myFunction() {
+                    var dropdown = document.getElementById("myDropdown");
+                    dropdown.classList.toggle("hidden");
+                }
+
+                // Close the dropdown if the user clicks outside of it
+                window.onclick = function (event) {
+                    if (!event.target.matches('.bg-[#161616]')) {
+                        var dropdowns = document.getElementsByClassName("dropdown-content");
+                        for (var i = 0; i < dropdowns.length; i++) {
+                            var openDropdown = dropdowns[i];
+                            if (!openDropdown.classList.contains('hidden')) {
+                                openDropdown.classList.add('hidden');
+                            }
+                        }
+                    }
+                }
+            </script>
+    </section>
+
+
+<!-- ----------------------------------------------------------------First Page ---------------------------------------------------------------------------------------->
+
+
+    <section class="bg-black to-[#DFFE56] snap-start z-0">
+        <div class="min-h-screen flex flex-col bg-cover bg-center"
+            style="background-image: url('{% static 'Backgrounds.png' %}')">
+
+            <div class="p-[45]"></div>
+
+            <div class="flex-grow grid md:grid-cols-2">
+                <div class="p-[4]">
+                    <div class="flex-grow">
+                        <div class="p-auto">
+                            <div class="">
+                                <p
+                                    class="tracking-[.3em] font-sans text-[#DFFE56] font-bold hidden md:block text-4xl lg:text-5xl xl:text-6xl pt-24 p-12">
+                                    WORK.SWEAT.ACHIEVE</p>
+                                <div class="p-12 block md:hidden">
+                                    <p
+                                        class="tracking-[.3em] font-sans text-[#DFFE56] font-bold block md:hidden text-4xl text-left">
+                                        WORK
+                                    </p><br>
+                                    <p
+                                        class="tracking-[.3em] font-sans text-[#DFFE56] font-bold block md:hidden text-4xl text-left">
+                                        SWEAT
+                                    </p><br>
+                                    <p
+                                        class="tracking-[.3em] font-sans text-[#DFFE56] font-bold block md:hidden text-4xl text-left">
+                                        ACHIEVE
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="p-auto">
+                            <div class="">
+                                <p
+                                    class="px-12 tracking-wider text-white font-sans text-s lg:text-m xl:text-l flex-auto font-light">
+                                    We
+                                    believe that fitness should be enjoyable and accessible to everyone. We provide
+                                    environment where you
+                                    can feel comfortable pushing your limits and reaching new heights.</p>
+                            </div>
+                        </div>
+                        <div class="p-auto">
+                            <div class="px-12 py-8 inline-block">
+                                <button class="transition ease-in-out delay-50 p-2 font-semibold bg-[#DFFE56]">Get
+                                    Started</button>
+                            </div>
+                        </div>
+                        <div class="p-auto grid grid-cols-2 lg:grid-cols-3">
+                            <div class="pl-12 text-right text-white text-xl justify-self-center">
+                                <div class="text-[#DFFE56] text-5xl font-bold">5000+</div>CLIENTS
+                            </div>
+                            <div class="pl-12 text-right text-white text-xl justify-self-center">
+                                <div class="text-[#DFFE56] text-5xl font-bold">50+</div>TRAINERS
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="p-[4] hidden md:block">
+                    <img src="{% static 'Models.png' %}" class="w-[70%] h-[75%] ml-auto z-0 filter drop-shadow-lg">
+                </div>
+            </div>
+
+            <div class="mt-auto bg-[#DFFE56] px-4 md:px-auto text-center">
+                <img src="{% static 'Brands.png' %}" class="w-full md:w-auto mx-auto">
+            </div>
+        </div>
+    </section>
+
+
+<!-- ----------------------------------------------------------------Second Page  -------------------------------------------------------------------------------------->
+
+
+    <section class="snap-start z-0"> 
+        <div class="bg-cover h-screen bg-black">
+            <div class="p-[45]"></div>
+            <p class="text-white text-center text-4xl font-semibold">OUR PROGRAMS</p><br>
+
+            <p class="text-gray-400 text-center">Every body is different. What do you want to start with?</p><br>
+
+            <div class="grid grid-row-3 md:grid-cols-3">
+
+                <div class="justify-self-center border-2 border-black hover:border-white rounded-md w-[90%] md:w-[80%] lg:h-[400px] bg-center bg-no-repeat bg-cover p-4" style="background-image: url('{% static 'p1.png' %}')">
+                    <div class="">
+                        <p class="text-white font-bold text-4xl">Personal Training</p>
+                        <p class="text-white">Our certified trainers provide personalized training programs to help our members achieve their fitness goals. We offer one-on-one training sessions and group training sessions.</p>
+                        <button class="text-white border border-white justify-center w-full ">Learn More</button>
+                    </div>
+                </div>
+                <div class="justify-self-center border-2 border-black hover:border-white rounded-md w-[90%] md:w-[80%] lg:h-[400px] bg-center bg-no-repeat bg-cover p-4" style="background-image: url('{% static 'p2.png' %}')">
+                    <div class="">
+                        <p class="text-white font-bold text-4xl">Diet Counselling</p>
+                        <p class="text-white">Our nutritionists provide personalized diet plans to help our members achieve their fitness goals. We offer one-on-one counselling sessions and group sessions with customised diet plans.</p>
+                        <button class="text-white border border-white justify-center w-full ">Learn More</button>
+                    </div>
+                </div>
+                <div class="justify-self-center border-2 border-black hover:border-white rounded-md w-[90%] md:w-[80%] lg:h-[400px] bg-center bg-no-repeat bg-cover p-4" style="background-image: url('{% static 'p3.png' %}')">
+                    <div class="">
+                        <p class="text-white font-bold text-4xl">Fitness Programs</p>
+                        <p class="text-white">We offer a variety of fitness programs, including weight training, cardio, yoga, and more. Our programs are designed to help our members achieve their fitness goals.</p>
+                        <button class="text-white border border-white justify-center w-full hover:border-[#DFFE56]">Learn More</button>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+<!-- ----------------------------------------------------------------Third Page --------------------------------------------------------------------------------------->
+
+    <section class="snap-start z-0">
+        <div class="bg-cover h-screen bg-black">
+            <div class="p-[45]"></div>
+            <p class="text-white text-center text-4xl font-semibold">PICK A PLAN</p><br>
+            <p class="text-gray-400 text-center">Start your journey with us today</p><br>
+
+            <div class=" grid-cols-3 z-0 hidden md:grid">
+                <div class="group flex relative justify-self-center items-center overflow-hidden">
+                    <!-- Initial image -->
+                    <img src="{% static '1999-1.png' %}" alt="Image 1" class="transition duration-600 ease-in-out block group-hover:hidden h-5/6">
+                
+                    <!-- Hover image -->
+                    <img src="{% static '1999-2.png' %}" alt="Image 2" class="transition duration-600 ease-in-out hidden group-hover:block h-5/6">
+                </div>
+                <div class="group flex relative justify-self-center items-center overflow-hidden">
+                    <!-- Initial image -->
+                    <img src="{% static '8999-1.png' %}" alt="Image 1" class="transition duration-600 ease-in-out block group-hover:hidden h-5/6">
+                
+                    <!-- Hover image -->
+                    <img src="{% static '8999-2.png' %}" alt="Image 2" class="transition duration-600 ease-in-out hidden group-hover:block h-5/6">
+                </div>
+                <div class="group flex relative justify-self-center items-center overflow-hidden">
+                    <!-- Initial image -->
+                    <img src="{% static '6999-1.png' %}" alt="Image 1" class="transition duration-600 ease-in-out block group-hover:hidden h-5/6">
+                
+                    <!-- Hover image -->
+                    <img src="{% static '6999-2.png' %}" alt="Image 2" class="transition duration-600 ease-in-out hidden group-hover:block h-5/6">
+                </div>
+            </div>
+            <div class="grid-rows-3 justify-items-center gap-8 z-0 grid md:hidden ">
+                <div class="group w-[75%] border border-white hover:border-[#DFFE56] rounded border-4 p-4">
+                    <div class="justify-between flex">
+                        <p class="text-white font-semibold text-xl group-hover:text-[#DFFE56]">MONTHLY PACKAGE</p>
+                        <p class="text-white font-semibold text-xl group-hover:text-[#DFFE56]">1999</p>
+                    </div>
+                    <p class="text-white">Lorem ipsum dolor sit amet,
+                        incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam,
+                        ullamco laboris nisi ut </p>
+                    <button class="w-full text-white border border-2 border-[#DFFE56] justify-center rounded">Enroll Now</button>
+                </div>
+                <div class="group w-[75%] border border-white hover:border-[#DFFE56] rounded border-4 p-4">
+                    <div class="justify-between flex">
+                        <p class="text-white font-semibold text-xl group-hover:text-[#DFFE56]">ANNUAL PACKAGE</p>
+                        <p class="text-white font-semibold text-xl group-hover:text-[#DFFE56]">8999</p>
+                    </div>
+                    <p class="text-white">Lorem ipsum dolor sit amet,
+                        incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam,
+                        ullamco laboris nisi ut </p>
+                    <button class="w-full text-white border border-2 border-[#DFFE56] justify-center rounded">Enroll Now</button>
+                </div>
+                <div class="group w-[75%] border border-white hover:border-[#DFFE56] rounded border-4 p-4">
+                    <div class="justify-between flex">
+                        <p class="text-white font-semibold text-xl group-hover:text-[#DFFE56]">CORPORATE PACKAGE</p>
+                        <p class="text-white font-semibold text-xl group-hover:text-[#DFFE56]">6999</p>
+                    </div>
+                    <p class="text-white">Lorem ipsum dolor sit amet,
+                        incididunt ut labore et dolore magna aliqua.
+                        Ut enim ad minim veniam,
+                        ullamco laboris nisi ut </p>
+                    <button class="w-full text-white border border-2 border-[#DFFE56] justify-center rounded">Enroll Now</button>
+            </div>
+            
+        </div>
+    </section>
+
+<!-- ----------------------------------------------------------------Fourth Page --------------------------------------------------------------------------------------->
+
+
+    <section class="bg-black snap-start z-0 bg-black max-w-screen">
+        <div class="min-h-screen flex flex-col bg-cover bg-center" style="background-image: url('{% static 'Backgrounds.png' %}')">
+            
+                <div class="p-[45]"></div>
+                <p class="text-white text-center text-3xl lg:text-4xl font-semibold p-4">CLIENT STORIES</p><br>
+                <p class="text-gray-400 text-center">Here are a few reviews and comments from our clients</p><br>
+                <div class="flex-auto grid grid-cols-3 p-1 max-h-screen">
+                    <div class="flex justify-center hidden lg:block sm:max-md:justify-center">
+                        <img src="{% static 'client.png' %}" class="justify-center p-auto drop-shadow-lg">
+                    </div>
+                    <div class="col-span-2 p-auto grid-row-4 justify-around"><br>
+                        <div class="p-4 md:p-6 lg:p-8 text-white text-3xl font-bold">Health and Fitness is a lifestyle</div>
+                        <div class="p-4 md:p-6 lg:p-8 text-white text-l">Transform your fitness journey at our state-of-the-art gym."-
+                            Unleash your potential with cutting-edge equipment and facilities.- Expert trainers to guide you
+                            towards your fitness goals.- A vibrant and motivating atmosphere to keep you motivated.- Clean
+                            and well-maintained spaces for a comfortable workout experience.- Join our community and take
+                            your fitness to the next level.</div>
+                        <div class="p-8 text-white "><p class="font-bold">Tania Vincent</p> <p class="font-light">Media Influencer</p></div>
+                    </div>
+    
+                </div>
+            </div>
+    
+    
+        </div>
+    </section>
+
+
+<!-- ----------------------------------------------------------------Fifth Page --------------------------------------------------------------------------------------->
+
+
+    <section>
+        <div class="bg-[#151515] h-screen w-screen">
+            <div class="p-[35]"></div>
+            <h1 class="text-white text-center text-3xl lg:text-4xl font-semibold p-6">OUR TRAINERS</h1>
+            <p class="text-gray-400 text-center p-4">Get a heads up of our professional trainers who are rated the best</p><br>
+            <div class="grid grid-cols-2 md:grid-cols-3 p-4 md:p-6 lg:p-8">
+                <div class="flex flex-wrap">
+                    <div class="w-full p-4 h-fit">
+                        <div class="bg-black text-white p-3 md:p-4">
+                            <div class="flex flex-row">
+                                <div class="w-1/4">
+                                    <img src="{% static 'trainer.png' %}" class="w-11/12 max-w-[80]">
+                                </div>
+                                <div class="w-3/4 flex flex-col col-span-2">
+                                    <p class="text-sm md:text-base">Trainer Name</p>
+                                    <p class="text-xs md:text-sm text-[#DFFE56]">Branch Name</p>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-sm md:text-base">Expert in strength training, cardiovascular conditioning, and nutrition guidance. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full p-4 h-fit">
+                        <div class="bg-black text-white p-3 md:p-4">
+                            <div class="flex flex-row">
+                                <div class="w-1/4">
+                                    <img src="{% static 'trainer.png' %}" class="w-11/12 max-w-[80]">
+                                </div>
+                                <div class="w-3/4 flex flex-col col-span-2">
+                                    <p class="text-sm md:text-base">Trainer Name</p>
+                                    <p class="text-xs md:text-sm text-[#DFFE56]">Branch Name</p>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-sm md:text-base">Lorem ipsum dolor sit amet consectetur. Sollicitudin quam aliquet scelerisque pretium. Aliquet lectus quisque semper mauris in adipiscing cras. At eu in tellus tincidunt egestas nibh urna purus. Sit posuere sit sed id condimentum. Morbi.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-wrap">
+                    <div class="w-full p-4 h-fit">
+                        <div class="bg-black text-white p-3 md:p-4">
+                            <div class="flex flex-row">
+                                <div class="w-1/4">
+                                    <img src="{% static 'trainer.png' %}" class="w-11/12 max-w-[80]">
+                                </div>
+                                <div class="w-3/4 flex flex-col col-span-2">
+                                    <p class="text-sm md:text-base">Trainer Name</p>
+                                    <p class="text-xs md:text-sm text-[#DFFE56]">Branch Name</p>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-sm md:text-base">Lorem ipsum dolor sit amet consectetur. Sollicitudin quam aliquet scelerisque pretium. Aliquet lectus quisque semper mauris in adipiscing cras. At eu in tellus tincidunt egestas nibh urna purus. Sit posuere sit sed id condimentum. Morbi.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full p-4 h-fit">
+                        <div class="bg-black text-white p-3 md:p-4">
+                            <div class="flex flex-row">
+                                <div class="w-1/4">
+                                    <img src="{% static 'trainer.png' %}" class="w-11/12 max-w-[80]">
+                                </div>
+                                <div class="w-3/4 flex flex-col col-span-2">
+                                    <p class="text-sm md:text-base">Trainer Name</p>
+                                    <p class="text-xs md:text-sm text-[#DFFE56]">Branch Name</p>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-sm md:text-base">Expert in strength training, cardiovascular conditioning, and nutrition guidance. </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-wrap hidden md:block">
+                    <div class="w-full p-4 h-fit">
+                        <div class="bg-black text-white p-3 md:p-4">
+                            <div class="flex flex-row">
+                                <div class="w-1/4">
+                                    <img src="{% static 'trainer.png' %}" class="w-11/12 max-w-[80]">
+                                </div>
+                                <div class="w-3/4 flex flex-col col-span-2">
+                                    <p class="text-sm md:text-base">Trainer Name</p>
+                                    <p class="text-xs md:text-sm text-[#DFFE56]">Branch Name</p>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-sm md:text-base">Expert in strength training, cardiovascular conditioning, and nutrition guidance. </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="w-full p-4 h-fit">
+                        <div class="bg-black text-white p-3 md:p-4">
+                            <div class="flex flex-row">
+                                <div class="w-1/4">
+                                    <img src="{% static 'trainer.png' %}" class="w-11/12 max-w-[80]">
+                                </div>
+                                <div class="w-3/4 flex flex-col col-span-2">
+                                    <p class="text-sm md:text-base">Trainer Name</p>
+                                    <p class="text-xs md:text-sm text-[#DFFE56]">Branch Name</p>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-sm md:text-base">Lorem ipsum dolor sit amet consectetur. Sollicitudin quam aliquet scelerisque pretium. Aliquet lectus quisque semper mauris in adipiscing cras. At eu in tellus tincidunt egestas nibh urna purus. Sit posuere sit sed id condimentum. Morbi.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+        </div>
+    </section>
+
+
+<!-- ----------------------------------------------------------------Sixth Page --------------------------------------------------------------------------------------->
+
+
+<section>
+    <div class="h-[500] w-screen bg-black">
+        <div class="p-[25]"></div>
+        <h1 class="text-white text-center text-3xl lg:text-4xl font-semibold">GALLERY</h1>
+        <p class="text-gray-400 text-center">Get to know our Gym ambiance and our events</p><br>
+        <div class="overflow-x-auto">
+            <div class="grid grid-cols-9 gap-4 p-4 px-8 h-[300] w-[3200] scroll-x scroll-smooth">
+                <div class="h-200 w-300 snap-center">
+                    <img src="{% static '1.png'%}" class="">
+                </div>
+                <div class="h-200 w-300 snap-center">
+                    <img src="{% static '2.png'%}" class="">
+                </div>
+                <div class="h-200 w-300 snap-center">
+                    <img src="{% static '3.png'%}" class="">
+                </div>
+                <div class="h-200 w-300 snap-center">
+                    <img src="{% static '4.png'%}" class="">
+                </div>
+                <div class="h-200 w-300 snap-center">
+                    <img src="{% static '5.png'%}" class="">
+                </div>
+                <div class="h-200 w-300 snap-center">
+                    <img src="{% static '6.png'%}" class="">
+                </div>
+                <div class="h-200 w-300 snap-center">
+                    <img src="{% static '7.png'%}" class="">
+                </div>
+                <div class="h-200 w-300 snap-center">
+                    <img src="{% static '8.png'%}" class="">
+                </div>
+                <div class="h-200 w-300 snap-center">
+                    <img src="{% static '9.png'%}" class="">
+                </div>
+            </div>
+        </div>
+</section>
+
+
+
+<!-- ----------------------------------------------------------------Seventh Page --------------------------------------------------------------------------------------->
+
+
+<section>
+    <div class="h-1/2 bg-[#151515]">
+        <h1 class="text-white text-center text-3xl lg:text-4xl font-semibold flex p-4 justify-evenly">  FAQ'S </h1>
+        <p class="text-gray-400 text-center">Get to know our Gym ambiance and our events</p><br>
+            <div class="grid grid-cols-2 gap-2 content-center p-4">
+                <div class="grid grid-rows-2 md:grid-rows-1 md:grid-cols-2 gap-2">
+                    <div class="grid grid-rows-2 justify-center gap-2">
+                        <button class="text-white font-semi-bold border border-white rounded justify-self-center p-4 w-fit">First Aid &
+                            Physio</button>
+                        <button class="text-white font-semi-bold border border-white rounded justify-self-center p-4 w-fit">First Aid &
+                            Physio</button>
+                    </div>
+                    <div class="grid grid-rows-2 justify-center gap-2">
+                        <button class="text-white font-semi-bold border border-white rounded justify-self-center p-4 w-fit">First Aid &
+                            Physio</button>
+                        <button class="text-white font-semi-bold border border-white rounded justify-self-center p-4 w-fit">First Aid &
+                            Physio</button>
+                    </div>
+                </div>
+                <div class="grid grid-rows-2 md:grid-rows-1 md:grid-cols-2 gap-2">
+                    <div class="grid grid-rows-2 justify-center gap-2">
+                        <button class="text-white font-semi-bold border border-white rounded justify-self-center p-4 w-fit">First Aid &
+                            Physio</button>
+                        <button class="text-white font-semi-bold border border-white rounded justify-self-center p-4 w-fit">First Aid &
+                            Physio</button>
+                    </div>
+                    <div class="grid grid-rows-2 justify-center gap-2">
+                        <button class="text-white font-semi-bold border border-white rounded justify-self-center p-4 w-fit">First Aid &
+                            Physio</button>
+                        <button class="text-white font-semi-bold border border-white rounded justify-self-center p-4 w-fit">First Aid &
+                            Physio</button>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <!-- <svg viewBox="0 5 50 10" xmlns="http://www.w3.org/2000/svg" stroke-width="0.5" stroke="currentColor" class="w-1/4 h-auto justify-self-center"><line x1="0" y1="10" x2="50" y2="10" stroke="white" /></svg> -->
+
+</section>
+
+
+<!-- ----------------------------------------------------------------Eighth Page --------------------------------------------------------------------------------------->
+
+
+<section>
+    <div class="h-fit w-screen bg-[#DFFE56]">
+        <div class="grid grid-rows-3 md:grid-rows-1 md:grid-cols-3 gap-2 justify-items-center">
+            <div class="h-fit w-fit">
+                <p class="font-bold">Subscribe to our news letter</p>
+                <p>Be the first to know about new offers, events and much more.</p>
+            </div>
+            <div class="text-center h-fit w-fit  justify-items-center">
+                <form id="subscribe-form" class="justify-self-center bg-white border border-grey-100 rounded">
+                    {% csrf_token %}
+                    <input type="email" id="email" name="email" placeholder="Your Email Address" required>
+                    <button type="button" id="subscribe-button"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12h15m0 0l-6.75-6.75M19.5 12l-6.75 6.75" />
+                      </svg>
+                      </button>
+                </form>
+            </div>
+            <div class="h-fit w-fit p-auto">
+                <h1>Follow us on</h1>
+                <div class="flex flex-row h-fit w-64 justify-between">
+                    <div class="h-14 w-14"><img src="{% static 'fb.png'%}" class="h-14 w-14"></div>                    
+                    <div class="h-14 w-14"><img src="{% static 'twitter.png'%}" class="h-14 w-14"></div>
+                    <div class="h-14 w-14"><img src="{% static 'instagram.png'%}" class="h-14 w-14"></div>
+                    <div class="h-14 w-14"><img src="{% static 'linked in.png'%}" class="h-14 w-14"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // Add an event listener to the button
+        document.getElementById('subscribe-button').addEventListener('click', function () {
+            var email = document.getElementById('email').value;
+    
+            // Make an AJAX POST request to your Django view
+            fetch('/subscribe/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': csrftoken, // Include your CSRF token here
+                },
+                body: JSON.stringify({ email: email }),
+            })
+                .then(response => response.json())
+                .then(data => {
+                    if (data.success) {
+                        alert('Thank you for subscribing!');
+                    } else {
+                        alert('Failed to subscribe. Please try again later.');
+                    }
+                });
+        });
+    </script>
+</section>
+
+
+</section>
+{% endblock %}
+
+
